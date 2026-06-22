@@ -6,10 +6,12 @@ import Stars from '../components/Stars.jsx';
 import BookingModal from './BookingModal.jsx';
 
 const PACKAGE_INFO = {
-  daily:   { name: 'Daily Package',   nameAr: 'الباقة اليومية',   price: 150, desc: 'Full day, up to 8 hours' },
-  weekly:  { name: 'Weekly Package',  nameAr: 'الباقة الأسبوعية', price: 800, desc: '5 days/week' },
-  monthly: { name: 'Monthly Package', nameAr: 'الباقة الشهرية',   price: 2500, desc: 'Full month coverage' },
+  daily:   { name: 'Daily Package',   nameAr: 'الباقة اليومية',   ratePerHour: 120, minHours: 4,  available: true,  desc: '120 EGP/hr · Min 4 hrs, Max 8 hrs/day' },
+  weekly:  { name: 'Weekly Package',  nameAr: 'الباقة الأسبوعية', ratePerHour: 100, minHours: 20, available: true,  desc: '100 EGP/hr · Min 20 hrs/week' },
+  monthly: { name: 'Monthly Package', nameAr: 'الباقة الشهرية',   ratePerHour: null, minHours: null, available: false, desc: 'Not available currently — قريباً' },
 };
+
+const GENERAL_NOTE = 'Min 4 hrs, Max 8 hrs per day. Transportation fees calculated per day based on area.';
 
 export default function BabysitterProfile() {
   const { id } = useParams();
@@ -95,18 +97,30 @@ export default function BabysitterProfile() {
             return (
               <div
                 key={pkgId}
-                className={`package-card ${selectedPkg === pkgId ? 'selected' : ''}`}
-                onClick={() => setSelectedPkg(pkgId)}
+                className={`package-card ${selectedPkg === pkgId ? 'selected' : ''} ${!pkg.available ? 'unavailable' : ''}`}
+                onClick={() => pkg.available && setSelectedPkg(pkgId)}
+                style={!pkg.available ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
               >
                 <h3>{pkg.name}</h3>
                 <div className="pkg-ar">{pkg.nameAr}</div>
-                <div className="package-price">
-                  {pkg.price.toLocaleString()} <span className="currency">EGP</span>
-                </div>
+                {pkg.available ? (
+                  <div className="package-price">
+                    {pkg.ratePerHour} <span className="currency">EGP/hr</span>
+                    <div style={{ fontSize: '0.78rem', color: '#a07050', marginTop: '0.2rem' }}>
+                      Min {pkg.minHours} hrs
+                      {pkgId === 'daily' ? ' · Starting from ' + (pkg.ratePerHour * pkg.minHours) + ' EGP' : ''}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="package-price" style={{ fontSize: '1rem', color: '#999' }}>Coming Soon</div>
+                )}
                 <div className="package-desc">{pkg.desc}</div>
               </div>
             );
           })}
+        </div>
+        <div style={{ marginTop: '1rem', padding: '0.75rem 1rem', background: '#fff8f0', borderRadius: '8px', border: '1px solid #f5d9b0', fontSize: '0.85rem', color: '#7a4f2e' }}>
+          ℹ️ <strong>General Note:</strong> {GENERAL_NOTE}
         </div>
         <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
           <button

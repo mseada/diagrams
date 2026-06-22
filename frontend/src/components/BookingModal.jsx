@@ -67,9 +67,9 @@ export default function BookingModal({ sitter, onClose }) {
             <div className="form-group">
               <label>Package | الباقة</label>
               <select value={selectedPkg} onChange={e => setSelectedPkg(e.target.value)}>
-                {packages.map(p => (
+                {packages.filter(p => p.available !== false).map(p => (
                   <option key={p.id} value={p.id}>
-                    {p.name} — {p.price} {p.currency}
+                    {p.name} — {p.ratePerHour} EGP/hr (min {p.minimumHours} hrs)
                   </option>
                 ))}
               </select>
@@ -105,9 +105,17 @@ export default function BookingModal({ sitter, onClose }) {
             )}
 
             {selectedPkgObj && (
-              <div style={{ background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '10px', padding: '0.75rem 1rem', marginBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ color: '#7c2d12', fontWeight: 600 }}>Total</span>
-                <span style={{ color: '#c2410c', fontWeight: 800, fontSize: '1.2rem' }}>{selectedPkgObj.price} EGP</span>
+              <div style={{ background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '10px', padding: '0.75rem 1rem', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                  <span style={{ color: '#7c2d12', fontWeight: 600 }}>Rate</span>
+                  <span style={{ color: '#c2410c', fontWeight: 800, fontSize: '1.2rem' }}>{selectedPkgObj.ratePerHour} EGP/hr</span>
+                </div>
+                <div style={{ fontSize: '0.78rem', color: '#92400e' }}>
+                  Min {selectedPkgObj.minimumHours} hrs · Min charge {selectedPkgObj.ratePerHour * selectedPkgObj.minimumHours} EGP
+                </div>
+                <div style={{ fontSize: '0.75rem', color: '#a07050', marginTop: '0.3rem' }}>
+                  ℹ️ Transportation fees added per day based on area
+                </div>
               </div>
             )}
 

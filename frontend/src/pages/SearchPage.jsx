@@ -85,7 +85,7 @@ export default function SearchPage() {
               <option value="">Any Package</option>
               <option value="daily">Daily — يومي</option>
               <option value="weekly">Weekly — أسبوعي</option>
-              <option value="monthly">Monthly — شهري</option>
+              <option value="monthly" disabled>Monthly — شهري (Coming Soon)</option>
             </select>
           </div>
           <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-end' }}>
@@ -129,7 +129,7 @@ export default function SearchPage() {
                       </div>
                     </div>
                     <div className="sitter-card-footer">
-                      <div className="price-hint">from <strong>150</strong> EGP/day</div>
+                      <div className="price-hint">from <strong>120</strong> EGP/hr</div>
                       <button className="btn-secondary">View Profile</button>
                     </div>
                   </div>

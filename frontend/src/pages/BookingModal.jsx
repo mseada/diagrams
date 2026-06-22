@@ -40,7 +40,7 @@ export default function BookingModal({ sitter, selectedPkg, packageInfo, onClose
             <h3>Booking Confirmed! — تم الحجز</h3>
             <p>
               You've booked <strong>{sitter.name}</strong> for the{' '}
-              <strong>{packageInfo[activePkg].name}</strong> ({packageInfo[activePkg].price.toLocaleString()} EGP).
+              <strong>{packageInfo[activePkg].name}</strong> ({packageInfo[activePkg].ratePerHour} EGP/hr).
             </p>
             <p style={{ marginTop: '0.5rem' }}>We'll be in touch shortly.</p>
             <button className="btn-primary" style={{ marginTop: '1.5rem' }} onClick={onClose}>
@@ -53,8 +53,8 @@ export default function BookingModal({ sitter, selectedPkg, packageInfo, onClose
             <p className="sub">Complete your booking details below</p>
 
             {/* Package selector inside modal */}
-            <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
-              {sitter.packages.map(pkgId => (
+            <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
+              {sitter.packages.filter(pkgId => packageInfo[pkgId].available !== false).map(pkgId => (
                 <button
                   key={pkgId}
                   type="button"
@@ -72,10 +72,15 @@ export default function BookingModal({ sitter, selectedPkg, packageInfo, onClose
                   }}
                 >
                   {packageInfo[pkgId].name}<br />
-                  <span style={{ fontWeight: 400 }}>{packageInfo[pkgId].price.toLocaleString()} EGP</span>
+                  <span style={{ fontWeight: 400 }}>{packageInfo[pkgId].ratePerHour} EGP/hr</span>
                 </button>
               ))}
             </div>
+            {activePkg && packageInfo[activePkg] && (
+              <div style={{ fontSize: '0.78rem', color: '#92400e', background: '#fff8f0', border: '1px solid #f5d9b0', borderRadius: '6px', padding: '0.5rem 0.75rem', marginBottom: '1rem' }}>
+                ℹ️ Min {packageInfo[activePkg].minHours} hrs · Min charge {packageInfo[activePkg].ratePerHour * packageInfo[activePkg].minHours} EGP · Transportation calculated per day based on area
+              </div>
+            )}
 
             <form onSubmit={handleSubmit}>
               <div className="form-group">
@@ -125,7 +130,7 @@ export default function BookingModal({ sitter, selectedPkg, packageInfo, onClose
               <div className="modal-actions">
                 <button type="button" className="btn-cancel" onClick={onClose}>Cancel</button>
                 <button type="submit" className="btn-primary" style={{ flex: 2 }} disabled={loading}>
-                  {loading ? 'Booking...' : `Confirm — ${packageInfo[activePkg].price.toLocaleString()} EGP`}
+                  {loading ? 'Booking...' : `Confirm — ${packageInfo[activePkg].ratePerHour} EGP/hr`}
                 </button>
               </div>
             </form>

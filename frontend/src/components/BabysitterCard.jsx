@@ -39,7 +39,7 @@ export default function BabysitterCard({ sitter, onBook }) {
 
       <div className="babysitter-card-footer">
         <span style={{ fontWeight: 700, color: '#c2410c', fontSize: '1rem' }}>
-          From 150 <span style={{ fontSize: '0.75rem' }}>EGP/day</span>
+          From 120 <span style={{ fontSize: '0.75rem' }}>EGP/hr</span>
         </span>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
           <Link to={`/babysitters/${sitter.id}`} className="btn btn-secondary" style={{ padding: '0.4rem 0.9rem', fontSize: '0.85rem' }}>

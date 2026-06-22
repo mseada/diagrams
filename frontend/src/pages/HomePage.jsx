@@ -37,7 +37,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="hero">
         <h1>Find Trusted Babysitters in Cairo</h1>
-        <p className="subtitle">أجدي مربية موثوقة في القاهرة — Daily, Weekly & Monthly Packages</p>
+        <p className="subtitle">أجدي مربية موثوقة في القاهرة — Daily & Weekly Packages</p>
         <form className="hero-search" onSubmit={handleSearch}>
           <input
             type="text"
@@ -64,21 +64,26 @@ export default function HomePage() {
             <div className="pkg-item">
               <h3>Daily Package</h3>
               <div className="ar">الباقة اليومية</div>
-              <div className="price">150 <span>EGP</span></div>
-              <div className="desc">Full day, up to 8 hours</div>
+              <div className="price">120 <span>EGP/hr</span></div>
+              <div className="desc">Min 4 hrs · Max 8 hrs/day</div>
+              <div className="desc" style={{ fontSize: '0.78rem', marginTop: '0.2rem' }}>From 480 EGP/day</div>
             </div>
             <div className="pkg-item featured">
               <h3>Weekly Package</h3>
               <div className="ar">الباقة الأسبوعية</div>
-              <div className="price">800 <span>EGP</span></div>
-              <div className="desc">5 days/week, best value</div>
+              <div className="price">100 <span>EGP/hr</span></div>
+              <div className="desc">Min 20 hrs/week · Best value</div>
+              <div className="desc" style={{ fontSize: '0.78rem', marginTop: '0.2rem' }}>From 2,000 EGP/week</div>
             </div>
-            <div className="pkg-item">
+            <div className="pkg-item" style={{ opacity: 0.6 }}>
               <h3>Monthly Package</h3>
               <div className="ar">الباقة الشهرية</div>
-              <div className="price">2,500 <span>EGP</span></div>
-              <div className="desc">Full month, priority scheduling</div>
+              <div className="price" style={{ fontSize: '1.1rem', color: '#999' }}>Coming Soon</div>
+              <div className="desc">Not available currently — قريباً</div>
             </div>
+          </div>
+          <div style={{ marginTop: '1.2rem', padding: '0.6rem 1rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px', fontSize: '0.83rem', color: '#fff' }}>
+            ℹ️ Min 4 hrs, Max 8 hrs per day &nbsp;·&nbsp; Transportation fees calculated per day based on area
           </div>
         </div>
       </section>
@@ -137,7 +142,7 @@ function SitterCard({ sitter, onClick }) {
         </div>
       </div>
       <div className="sitter-card-footer">
-        <div className="price-hint">from <strong>150</strong> EGP/day</div>
+        <div className="price-hint">from <strong>120</strong> EGP/hr</div>
         <button className="btn-secondary">View Profile</button>
       </div>
     </div>
