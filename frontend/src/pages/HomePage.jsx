@@ -36,7 +36,7 @@ const PHOTOS = [
   },
 ];
 
-
+export default function HomePage() {
   const [query, setQuery] = useState('');
   const [area, setArea] = useState('');
   const [featured, setFeatured] = useState([]);
