@@ -1185,3 +1185,65 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Photo Strip (below hero, 3 equal columns) ── */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-height: 280px;
+}
+
+.photo-strip .photo-card {
+  border-radius: 0;
+  aspect-ratio: unset;
+  height: 280px;
+  box-shadow: none;
+}
+
+.photo-strip .photo-card:first-child { border-radius: 0; }
+
+/* ── Feature Row (1 wide + 2 stacked) ── */
+.photo-feature-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photo-feature-main .photo-card {
+  height: 340px;
+  aspect-ratio: unset;
+}
+
+.photo-feature-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.photo-feature-side .photo-card {
+  flex: 1;
+  aspect-ratio: unset;
+  height: 162px;
+}
+
+@media (max-width: 768px) {
+  .photo-strip {
+    grid-template-columns: 1fr;
+    max-height: unset;
+  }
+  .photo-strip .photo-card {
+    height: 200px;
+  }
+  .photo-feature-row {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .photo-feature-main .photo-card,
+  .photo-feature-side .photo-card {
+    height: 200px;
+  }
+}

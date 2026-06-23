@@ -36,6 +36,23 @@ const PHOTOS = [
   },
 ];
 
+function PhotoCard({ photo }) {
+  return (
+    <div className="photo-card">
+      <img
+        src={photo.url}
+        alt={photo.label}
+        loading="eager"
+        onError={e => { e.target.style.display = 'none'; }}
+      />
+      <div className="photo-overlay">
+        <div className="photo-label">{photo.label} — {photo.labelAr}</div>
+        <div className="photo-caption">{photo.caption}</div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [query, setQuery] = useState('');
   const [area, setArea] = useState('');
@@ -82,6 +99,13 @@ export default function HomePage() {
         </form>
       </section>
 
+      {/* Photo strip — visible on load, 3 photos */}
+      <div className="photo-strip">
+        <PhotoCard photo={PHOTOS[0]} />
+        <PhotoCard photo={PHOTOS[1]} />
+        <PhotoCard photo={PHOTOS[2]} />
+      </div>
+
       {/* Packages Banner */}
       <section className="packages-banner">
         <div className="packages-banner-inner">
@@ -115,30 +139,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <section className="section">
-        <h2 className="section-title">
-          Happy Moments
-          <span className="ar"> | لحظات سعيدة</span>
-        </h2>
-        <p className="section-subtitle">From newborns to big kids — we care for them all</p>
-        <div className="photo-gallery">
-          {PHOTOS.map((p, i) => (
-            <div key={i} className="photo-card">
-              <img
-                src={p.url}
-                alt={p.label}
-                loading="lazy"
-                onError={e => { e.target.style.display = 'none'; }}
-              />
-              <div className="photo-overlay">
-                <div className="photo-label">{p.label} — {p.labelAr}</div>
-                <div className="photo-caption">{p.caption}</div>
-              </div>
-            </div>
-          ))}
+      {/* Wide feature photo + side photo */}
+      <div className="photo-feature-row">
+        <div className="photo-feature-main">
+          <PhotoCard photo={PHOTOS[3]} />
         </div>
-      </section>
+        <div className="photo-feature-side">
+          <PhotoCard photo={PHOTOS[4]} />
+          <PhotoCard photo={PHOTOS[5]} />
+        </div>
+      </div>
 
       {/* Featured Babysitters */}
       <section className="section">
