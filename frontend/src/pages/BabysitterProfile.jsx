@@ -97,24 +97,35 @@ export default function BabysitterProfile() {
             return (
               <div
                 key={pkgId}
-                className={`package-card ${selectedPkg === pkgId ? 'selected' : ''} ${!pkg.available ? 'unavailable' : ''}`}
-                onClick={() => { if (pkg.available) setSelectedPkg(pkgId); }}
+                className={`package-card ${selectedPkg === pkgId ? 'selected' : ''}`}
+                onClick={() => {
+                  if (!pkg.available) return;
+                  setSelectedPkg(pkgId);
+                  setShowBooking(true);
+                }}
                 style={!pkg.available ? { opacity: 0.5, cursor: 'not-allowed', pointerEvents: 'none' } : { cursor: 'pointer' }}
               >
                 <h3>{pkg.name}</h3>
                 <div className="pkg-ar">{pkg.nameAr}</div>
                 {pkg.available ? (
-                  <div className="package-price">
-                    {pkg.ratePerHour} <span className="currency">EGP/hr</span>
-                    <div style={{ fontSize: '0.78rem', color: '#a07050', marginTop: '0.2rem' }}>
-                      Min {pkg.minHours} hrs
-                      {pkgId === 'daily' ? ' · Starting from ' + (pkg.ratePerHour * pkg.minHours) + ' EGP' : ''}
+                  <>
+                    <div className="package-price">
+                      {pkg.ratePerHour} <span className="currency">EGP/hr</span>
                     </div>
-                  </div>
+                    <div style={{ fontSize: '0.78rem', color: '#a07050', margin: '0.2rem 0' }}>
+                      Min {pkg.minHours} hrs · from {pkg.ratePerHour * pkg.minHours} EGP
+                    </div>
+                    <div className="package-desc">{pkg.desc}</div>
+                    <div style={{ marginTop: '0.75rem', background: '#f97316', color: '#fff', borderRadius: '6px', padding: '0.4rem 0.75rem', fontSize: '0.82rem', fontWeight: 600 }}>
+                      Book This Package
+                    </div>
+                  </>
                 ) : (
-                  <div className="package-price" style={{ fontSize: '1rem', color: '#999' }}>Coming Soon</div>
+                  <>
+                    <div className="package-price" style={{ fontSize: '1rem', color: '#999' }}>Coming Soon</div>
+                    <div className="package-desc">{pkg.desc}</div>
+                  </>
                 )}
-                <div className="package-desc">{pkg.desc}</div>
               </div>
             );
           })}
