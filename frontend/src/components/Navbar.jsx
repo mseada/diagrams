@@ -5,8 +5,8 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <NavLink to="/" className="navbar-brand">
-        <span>🍼</span>
-        <span>Cairo Babysitter</span>
+        <span>🌸</span>
+        <span>انيسه</span>
         <span className="ar">| مربيات القاهرة</span>
       </NavLink>
       <ul className="navbar-links">

@@ -6,20 +6,20 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #fffbf5;
-  color: #2d1a00;
+  background-color: #faf5ff;
+  color: #1e1b4b;
   min-height: 100vh;
 }
 
 /* ── Navbar ── */
 .navbar {
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
   padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 64px;
-  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -63,7 +63,7 @@ body {
 
 /* ── Hero ── */
 .hero {
-  background: linear-gradient(135deg, #f97316 0%, #c2410c 55%, #7c2d12 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 55%, #3b0764 100%);
   padding: 5rem 2rem 4rem;
   text-align: center;
   color: #fff;
@@ -102,13 +102,13 @@ body {
   outline: none;
   padding: 0.6rem 1rem;
   font-size: 0.95rem;
-  color: #2d1a00;
+  color: #1e1b4b;
   background: transparent;
   border-radius: 8px;
 }
 
 .hero-search button {
-  background: linear-gradient(135deg, #f97316, #ea580c);
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
   color: #fff;
   border: none;
   padding: 0.6rem 1.5rem;
@@ -119,9 +119,9 @@ body {
 
 /* ── Packages Banner ── */
 .packages-banner {
-  background: #fff7ed;
-  border-top: 1px solid #fed7aa;
-  border-bottom: 1px solid #fed7aa;
+  background: #f5f3ff;
+  border-top: 1px solid #ddd6fe;
+  border-bottom: 1px solid #ddd6fe;
   padding: 3rem 2rem;
   text-align: center;
 }
@@ -134,12 +134,12 @@ body {
 .packages-banner h2 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.4rem;
 }
 
 .packages-banner p {
-  color: #92400e;
+  color: #5b21b6;
   margin-bottom: 2rem;
 }
 
@@ -152,7 +152,7 @@ body {
 
 .pkg-item {
   background: #fff;
-  border: 2px solid #fed7aa;
+  border: 2px solid #ddd6fe;
   border-radius: 14px;
   padding: 1.5rem 2rem;
   min-width: 200px;
@@ -161,20 +161,20 @@ body {
 }
 
 .pkg-item.featured {
-  border-color: #f97316;
-  background: linear-gradient(135deg, #fff7ed, #fffbf5);
+  border-color: #8b5cf6;
+  background: linear-gradient(135deg, #f5f3ff, #faf5ff);
   transform: scale(1.04);
-  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.2);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
 }
 
 .pkg-item h3 {
-  color: #7c2d12;
+  color: #3b0764;
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
 
 .pkg-item .ar {
-  color: #c2410c;
+  color: #7c3aed;
   font-size: 0.9rem;
   margin-bottom: 0.75rem;
 }
@@ -182,7 +182,7 @@ body {
 .pkg-item .price {
   font-size: 1.9rem;
   font-weight: 800;
-  color: #c2410c;
+  color: #7c3aed;
 }
 
 .pkg-item .price span {
@@ -192,7 +192,7 @@ body {
 
 .pkg-item .desc {
   font-size: 0.8rem;
-  color: #92400e;
+  color: #5b21b6;
   margin-top: 0.25rem;
 }
 
@@ -206,16 +206,16 @@ body {
 .section-title {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.4rem;
 }
 
 .section-title .ar {
-  color: #c2410c;
+  color: #7c3aed;
 }
 
 .section-subtitle {
-  color: #92400e;
+  color: #5b21b6;
   margin-bottom: 1.75rem;
 }
 
@@ -241,7 +241,7 @@ body {
 
 .sitter-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
 }
 
 .sitter-card-header {
@@ -254,12 +254,12 @@ body {
 .sitter-card-name h3 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
 }
 
 .sitter-card-name .name-ar {
   font-size: 0.9rem;
-  color: #c2410c;
+  color: #7c3aed;
 }
 
 .sitter-card-body {
@@ -272,8 +272,8 @@ body {
 
 .sitter-card-footer {
   padding: 0.9rem 1.25rem;
-  border-top: 1px solid #fff7ed;
-  background: #fffbf5;
+  border-top: 1px solid #f5f3ff;
+  background: #faf5ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -281,11 +281,11 @@ body {
 
 .price-hint {
   font-size: 0.85rem;
-  color: #7c2d12;
+  color: #3b0764;
 }
 
 .price-hint strong {
-  color: #c2410c;
+  color: #7c3aed;
   font-size: 1rem;
 }
 
@@ -323,7 +323,7 @@ body {
 }
 
 .star {
-  color: #fbbf24;
+  color: #a78bfa;
   font-size: 1rem;
 }
 
@@ -339,13 +339,13 @@ body {
 
 .rating-num {
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   font-size: 0.9rem;
 }
 
 .review-count {
   font-size: 0.78rem;
-  color: #92400e;
+  color: #5b21b6;
 }
 
 /* ── Tags/Badges ── */
@@ -357,8 +357,8 @@ body {
 
 .tag {
   display: inline-block;
-  background: #ffedd5;
-  color: #c2410c;
+  background: #ede9fe;
+  color: #7c3aed;
   padding: 0.2rem 0.55rem;
   border-radius: 20px;
   font-size: 0.73rem;
@@ -381,7 +381,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.6rem 1.4rem;
-  background: linear-gradient(135deg, #f97316, #ea580c);
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -390,12 +390,12 @@ body {
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.5);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.5);
 }
 
 .btn-primary:disabled {
@@ -409,9 +409,9 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;
-  background: #fff7ed;
-  color: #c2410c;
-  border: 2px solid #fed7aa;
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 2px solid #ddd6fe;
   border-radius: 10px;
   font-size: 0.875rem;
   font-weight: 600;
@@ -421,26 +421,26 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #ffedd5;
+  background: #ede9fe;
 }
 
 /* ── Page Header ── */
 .page-header {
-  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
   padding: 3rem 2rem 2rem;
   text-align: center;
-  border-bottom: 1px solid #fed7aa;
+  border-bottom: 1px solid #ddd6fe;
 }
 
 .page-header h1 {
   font-size: 1.9rem;
   font-weight: 800;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.4rem;
 }
 
 .page-header .sub {
-  color: #92400e;
+  color: #5b21b6;
   font-size: 1rem;
 }
 
@@ -448,15 +448,15 @@ body {
 .loading {
   text-align: center;
   padding: 3rem;
-  color: #92400e;
+  color: #5b21b6;
   font-size: 1rem;
 }
 
 .empty {
   text-align: center;
   padding: 3rem;
-  color: #92400e;
-  background: #fff7ed;
+  color: #5b21b6;
+  background: #f5f3ff;
   border-radius: 14px;
   margin-top: 1.5rem;
 }
@@ -468,7 +468,7 @@ body {
 
 /* ── Results Count ── */
 .results-count {
-  color: #7c2d12;
+  color: #3b0764;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -502,7 +502,7 @@ body {
 .filter-group label {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #92400e;
+  color: #5b21b6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -510,18 +510,18 @@ body {
 .filter-group input,
 .filter-group select {
   padding: 0.5rem 0.75rem;
-  border: 2px solid #fed7aa;
+  border: 2px solid #ddd6fe;
   border-radius: 8px;
   font-size: 0.9rem;
-  color: #2d1a00;
-  background: #fffbf5;
+  color: #1e1b4b;
+  background: #faf5ff;
   outline: none;
   transition: border-color 0.2s;
 }
 
 .filter-group input:focus,
 .filter-group select:focus {
-  border-color: #f97316;
+  border-color: #8b5cf6;
 }
 
 /* ── Profile Page ── */
@@ -532,7 +532,7 @@ body {
 }
 
 .profile-hero {
-  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
   border-radius: 16px;
   padding: 2rem;
   display: flex;
@@ -544,13 +544,13 @@ body {
 .profile-info h1 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.2rem;
 }
 
 .profile-info .name-ar {
   font-size: 1.2rem;
-  color: #c2410c;
+  color: #7c3aed;
   margin-bottom: 1rem;
 }
 
@@ -566,11 +566,11 @@ body {
   align-items: center;
   gap: 0.3rem;
   font-size: 0.875rem;
-  color: #7c2d12;
+  color: #3b0764;
   background: #fff;
   padding: 0.3rem 0.75rem;
   border-radius: 20px;
-  border: 1px solid #fed7aa;
+  border: 1px solid #ddd6fe;
 }
 
 .profile-section {
@@ -584,10 +584,10 @@ body {
 .profile-section h2 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #fff7ed;
+  border-bottom: 2px solid #f5f3ff;
 }
 
 .packages-grid {
@@ -597,43 +597,43 @@ body {
 }
 
 .pkg-card {
-  border: 2px solid #fed7aa;
+  border: 2px solid #ddd6fe;
   border-radius: 12px;
   padding: 1.25rem;
   text-align: center;
   transition: all 0.2s;
   cursor: pointer;
-  background: #fffbf5;
+  background: #faf5ff;
 }
 
 .pkg-card:hover,
 .pkg-card.selected {
-  border-color: #f97316;
-  background: #fff7ed;
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
 }
 
 .pkg-card .pkg-price {
   font-size: 1.75rem;
   font-weight: 800;
-  color: #c2410c;
+  color: #7c3aed;
 }
 
 .pkg-card .pkg-name {
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.25rem;
 }
 
 .pkg-card .pkg-name-ar {
   font-size: 0.85rem;
-  color: #c2410c;
+  color: #7c3aed;
   margin-bottom: 0.5rem;
 }
 
 .pkg-card .pkg-desc {
   font-size: 0.78rem;
-  color: #92400e;
+  color: #5b21b6;
 }
 
 /* ── Modal ── */
@@ -674,7 +674,7 @@ body {
 .modal-title {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.4rem;
 }
 
@@ -688,29 +688,29 @@ body {
 .form-group label {
   font-size: 0.825rem;
   font-weight: 600;
-  color: #7c2d12;
+  color: #3b0764;
 }
 
 .form-group input,
 .form-group select {
   padding: 0.6rem 0.9rem;
-  border: 2px solid #fed7aa;
+  border: 2px solid #ddd6fe;
   border-radius: 10px;
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.2s;
-  color: #2d1a00;
-  background: #fffbf5;
+  color: #1e1b4b;
+  background: #faf5ff;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-  border-color: #f97316;
+  border-color: #8b5cf6;
 }
 
 .form-group .hint {
   font-size: 0.75rem;
-  color: #92400e;
+  color: #5b21b6;
 }
 
 .modal-actions {
@@ -740,7 +740,7 @@ body {
 }
 
 .admin-table th {
-  background: linear-gradient(135deg, #f97316, #ea580c);
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
   color: #fff;
   padding: 0.875rem 1rem;
   text-align: left;
@@ -753,9 +753,9 @@ body {
 
 .admin-table td {
   padding: 0.875rem 1rem;
-  border-bottom: 1px solid #fff7ed;
+  border-bottom: 1px solid #f5f3ff;
   font-size: 0.88rem;
-  color: #2d1a00;
+  color: #1e1b4b;
 }
 
 .admin-table tr:last-child td {
@@ -763,7 +763,7 @@ body {
 }
 
 .admin-table tr:hover td {
-  background: #fffbf5;
+  background: #faf5ff;
 }
 
 /* ── Admin Login ── */
@@ -780,12 +780,12 @@ body {
 .admin-login h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.4rem;
 }
 
 .admin-login p {
-  color: #92400e;
+  color: #5b21b6;
   font-size: 0.9rem;
   margin-bottom: 1.75rem;
 }
@@ -814,49 +814,49 @@ body {
   display: inline-flex;
   align-items: center;
   background: #fff;
-  color: #7c2d12;
+  color: #3b0764;
   padding: 0.3rem 0.75rem;
   border-radius: 20px;
-  border: 1px solid #fed7aa;
+  border: 1px solid #ddd6fe;
   font-size: 0.8rem;
   font-weight: 600;
 }
 
 /* ── Package Cards (profile page) ── */
 .package-card {
-  border: 2px solid #fed7aa;
+  border: 2px solid #ddd6fe;
   border-radius: 12px;
   padding: 1.25rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
-  background: #fffbf5;
+  background: #faf5ff;
 }
 
 .package-card:hover,
 .package-card.selected {
-  border-color: #f97316;
-  background: #fff7ed;
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+  border-color: #8b5cf6;
+  background: #f5f3ff;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
 }
 
 .package-card h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.2rem;
 }
 
 .package-card .pkg-ar {
   font-size: 0.85rem;
-  color: #c2410c;
+  color: #7c3aed;
   margin-bottom: 0.6rem;
 }
 
 .package-price {
   font-size: 1.7rem;
   font-weight: 800;
-  color: #c2410c;
+  color: #7c3aed;
 }
 
 .package-price .currency {
@@ -866,7 +866,7 @@ body {
 
 .package-desc {
   font-size: 0.78rem;
-  color: #92400e;
+  color: #5b21b6;
   margin-top: 0.3rem;
 }
 
@@ -882,10 +882,10 @@ body {
 .profile-section h2 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #fff7ed;
+  border-bottom: 2px solid #f5f3ff;
 }
 
 .profile-section p {
@@ -928,11 +928,11 @@ body {
 .admin-header h1 {
   font-size: 1.7rem;
   font-weight: 800;
-  color: #7c2d12;
+  color: #3b0764;
 }
 
 .admin-badge {
-  background: linear-gradient(135deg, #f97316, #ea580c);
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
   color: #fff;
   padding: 0.35rem 0.9rem;
   border-radius: 20px;
@@ -954,12 +954,12 @@ body {
 .admin-login h1 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.3rem;
 }
 
 .admin-login .sub {
-  color: #92400e;
+  color: #5b21b6;
   font-size: 0.9rem;
   margin-bottom: 1.75rem;
 }
@@ -975,7 +975,7 @@ body {
 }
 
 .data-table th {
-  background: linear-gradient(135deg, #f97316, #ea580c);
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
   color: #fff;
   padding: 0.875rem 1rem;
   text-align: left;
@@ -988,9 +988,9 @@ body {
 
 .data-table td {
   padding: 0.875rem 1rem;
-  border-bottom: 1px solid #fff7ed;
+  border-bottom: 1px solid #f5f3ff;
   font-size: 0.875rem;
-  color: #2d1a00;
+  color: #1e1b4b;
 }
 
 .data-table tr:last-child td {
@@ -998,7 +998,7 @@ body {
 }
 
 .data-table tr:hover td {
-  background: #fffbf5;
+  background: #faf5ff;
 }
 
 /* ── Booking Modal extras ── */
@@ -1036,12 +1036,12 @@ body {
 .modal h2 {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #7c2d12;
+  color: #3b0764;
   margin-bottom: 0.3rem;
 }
 
 .modal .sub {
-  color: #92400e;
+  color: #5b21b6;
   font-size: 0.875rem;
   margin-bottom: 1.25rem;
 }

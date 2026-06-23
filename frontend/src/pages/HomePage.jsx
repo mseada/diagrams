@@ -36,8 +36,8 @@ export default function HomePage() {
     <div>
       {/* Hero */}
       <section className="hero">
-        <h1>Find Trusted Babysitters in Cairo</h1>
-        <p className="subtitle">أجدي مربية موثوقة في القاهرة — Daily & Weekly Packages</p>
+        <h1>انيسه — مربيات موثوقة في القاهرة</h1>
+        <p className="subtitle">Find Trusted Babysitters in Cairo — Daily & Weekly Packages</p>
         <form className="hero-search" onSubmit={handleSearch}>
           <input
             type="text"
