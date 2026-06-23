@@ -9,7 +9,34 @@ const CAIRO_AREAS = [
   'Nasr City', 'Dokki', 'Mohandessin', '6th of October',
 ];
 
-export default function HomePage() {
+const PHOTOS = [
+  {
+    url: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&h=420&fit=crop&q=80',
+    label: 'Babies', labelAr: 'رضّع', caption: 'Gentle care for your little ones',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1476703993599-0035a44b0963?w=600&h=420&fit=crop&q=80',
+    label: 'Toddlers', labelAr: 'أطفال صغار', caption: 'Fun & learning every day',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=420&fit=crop&q=80',
+    label: 'Big Kids', labelAr: 'أطفال كبار', caption: 'Adventures & activities for school age',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&h=420&fit=crop&q=80',
+    label: 'Happy Families', labelAr: 'عائلات سعيدة', caption: 'Trusted by hundreds of Cairo families',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=600&h=420&fit=crop&q=80',
+    label: 'Newborns', labelAr: 'مواليد', caption: 'Specialised newborn care',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&h=420&fit=crop&q=80',
+    label: 'Playtime', labelAr: 'وقت اللعب', caption: 'Creative play & imagination',
+  },
+];
+
+
   const [query, setQuery] = useState('');
   const [area, setArea] = useState('');
   const [featured, setFeatured] = useState([]);
@@ -85,6 +112,31 @@ export default function HomePage() {
           <div style={{ marginTop: '1.2rem', padding: '0.6rem 1rem', background: 'rgba(255,255,255,0.15)', borderRadius: '8px', fontSize: '0.83rem', color: '#fff' }}>
             ℹ️ Min 4 hrs, Max 8 hrs per day &nbsp;·&nbsp; Transportation fees calculated per day based on area
           </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="section">
+        <h2 className="section-title">
+          Happy Moments
+          <span className="ar"> | لحظات سعيدة</span>
+        </h2>
+        <p className="section-subtitle">From newborns to big kids — we care for them all</p>
+        <div className="photo-gallery">
+          {PHOTOS.map((p, i) => (
+            <div key={i} className="photo-card">
+              <img
+                src={p.url}
+                alt={p.label}
+                loading="lazy"
+                onError={e => { e.target.style.display = 'none'; }}
+              />
+              <div className="photo-overlay">
+                <div className="photo-label">{p.label} — {p.labelAr}</div>
+                <div className="photo-caption">{p.caption}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
