@@ -98,8 +98,8 @@ export default function BabysitterProfile() {
               <div
                 key={pkgId}
                 className={`package-card ${selectedPkg === pkgId ? 'selected' : ''} ${!pkg.available ? 'unavailable' : ''}`}
-                onClick={() => pkg.available && setSelectedPkg(pkgId)}
-                style={!pkg.available ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
+                onClick={() => { if (pkg.available) setSelectedPkg(pkgId); }}
+                style={!pkg.available ? { opacity: 0.5, cursor: 'not-allowed', pointerEvents: 'none' } : { cursor: 'pointer' }}
               >
                 <h3>{pkg.name}</h3>
                 <div className="pkg-ar">{pkg.nameAr}</div>
@@ -127,7 +127,10 @@ export default function BabysitterProfile() {
             className="btn-primary"
             style={{ fontSize: '1rem', padding: '0.85rem 2rem' }}
             onClick={() => {
-              if (!selectedPkg) setSelectedPkg(sitter.packages[0]);
+              if (!selectedPkg) {
+                const firstAvailable = sitter.packages.find(id => PACKAGE_INFO[id]?.available !== false);
+                setSelectedPkg(firstAvailable || sitter.packages[0]);
+              }
               setShowBooking(true);
             }}
           >
